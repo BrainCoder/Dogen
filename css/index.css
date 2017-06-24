@@ -1,0 +1,43 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+#main-table {
+    background-color: #d3d3d3;
+    width: 100%;
+}
+.signalName {
+    padding-right: 20px;
+}
+.signalIconTd {
+    width: 18px;
+}
+.vert-img {
+    vertical-align: middle;
+}
+.nowrap {
+    text-wrap: none;
+    white-space: nowrap;
+}
+.renderWave, .renderWaveClk {
+    background-color: #000000;
+    vertical-align: middle;
+}
+.padding {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+button {
+    color: white;
+    border: none;
+    font-size: 17px;
+    font-weight: 500;
+    -webkit-border-radius: 4px;
+    border-radius: 5px;
+    padding: 10px 32px;
+    margin: 26px 5px 0 5px;
+    cursor: pointer;
+    display: inline-block;
+    background-color: rgb(140, 212, 245);
+    box-shadow: rgba(140, 212, 245, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.0470588) 0px 0px 0px 1px inset;
+}

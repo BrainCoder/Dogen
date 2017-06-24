@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Dogen</title>
+
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.loadTemplate-1.4.4.min.js"></script>
+    <script src="js/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="js/index.js"></script>
+    <script>if (window.module) module = window.module;</script>
+
+    <script type="text/html" id="signal-template">
+      <tr data-id="id" class="signal">
+        <td class="signalIconTd">
+          <img data-id="idImg" src="img/signal-unknown.png" class="vert-img"/>
+        </td>
+        <td data-content="signalName" class="signalName">
+        </td>
+        <td class="nowrap">
+          <img data-id="idSigOn" src="img/signal-on.png" class="vert-img"/>
+          <img data-id="idSigOff" src="img/signal-off.png" class="vert-img"/>
+        </td>
+        <td>
+          <canvas data-id="idGraph" width="0" height="24" class="renderWave"></canvas>
+        </td>
+      </tr>
+    </script>
+
+    <script type="text/html" id="clock-template">
+      <tr data-id="id" class="clock">
+        <td class="clockIconTd">
+          <img data-id="idImg" src="img/clock.png" class="vert-img"/>
+        </td>
+        <td data-content="clockName" class="clockName">
+        </td>
+        <td>
+          <img data-id="idClockChange" src="img/clock.png" class="vert-img"/>
+        </td>
+        <td>
+          <canvas data-id="idGraph" width="0" height="24" class="renderWaveClk"></canvas>
+        </td>
+      </tr>
+    </script>
+
+
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="js/sweetalert/dist/sweetalert.css">
+  </head>
+  <body>
+
+    <table id="main-table">
+
+    </table>
+    <div class="padding">
+      <button type="button" id="add-signal-btn">Add signal</button>
+      <button type="button" id="add-clock-btn">Add Clock</button>
+      <button type="button" id="run-1-clock-btn">Run for 1 clock cycle</button>
+      <button type="button" id="gen-do-file-btn">Generate DO file</button>
+    </div>
+
+  </body>
+
+  <script>
+      var remote = require('electron').remote;
+      var dialog = remote.require('electron').dialog;
+      var fs = remote.require('fs');
+    // You can also require other files to run in this process
+    require('./renderer.js')
+  </script>
+</html>
